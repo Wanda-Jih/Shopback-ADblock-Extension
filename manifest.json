@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "Adblock for ShopBack",
+    "description": "This extension allows the user to block the AD from ShopBack website",
+    "version": "1.0",
+    "icons": {
+        "16": "icons/shopback-adblock-icon-16.png",
+        "128": "icons/shopback-adblock-icon-128.png"
+      },
+  
+    "browser_action": {
+      "default_icon": "icons/shopback-adblock-icon-128.png",
+      "default_title": "ShopBack Adblock Extension",
+      "default_popup": "popup.html"
+    },
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "content_scripts": [{
+        "matches": [
+            "http://*.shopback.com.tw/*", 
+            "https://*.shopback.com.tw/*",
+            "http://*.shopback.sg/*",
+            "https://*.shopback.sg/*"
+        ],
+        "js": ["script.js"]
+      }]
+  }
